@@ -14,6 +14,7 @@ int main() {
     int max = 200;
 
     double start_time = omp_get_wtime();
+#pragma omp parallel for default(none) shared(color,max)
     /* Calculate Mandelbrot set copied from http://jonisalonen.com/2013/lets-draw-the-mandelbrot-set/ */
     for (int row = 0; row < iYmax; row++) {
         for (int col = 0; col < iXmax; col++) {
